@@ -26,6 +26,10 @@
       text-decoration: none;
     }
 
+    a:focus {
+      outline: 2px solid #c58bff;
+    }
+
     .wrap {
       width: 92%;
       max-width: 900px;
@@ -58,6 +62,11 @@
       display: inline-block;
       margin-right: 14px;
       font-size: 13px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
     }
 
     .hero {
@@ -96,26 +105,108 @@
       border-radius: 4px;
     }
 
+    .button:hover {
+      background: #e1c2ff;
+    }
+
     .section {
       padding: 25px 0;
     }
 
     h2 {
       font-size: 22px;
+      margin-top: 0;
     }
 
     .muted {
       color: #b7a8c5;
       font-size: 13px;
     }
+
+    .directory {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tile {
+      display: block;
+      width: calc(50% - 5px);
+      padding: 15px 10px;
+      background: #120d1b;
+      border: 1px solid #39254e;
+      border-radius: 5px;
+    }
+
+    .tile:hover {
+      background: #241335;
+      border-color: #c58bff;
+    }
+
+    .tile span {
+      display: block;
+      color: #c58bff;
+      font-size: 25px;
+    }
+
+    .tile strong,
+    .tile small {
+      display: block;
+    }
+
+    .tile strong {
+      color: #f8f2ff;
+      letter-spacing: 1px;
+    }
+
+    .tile small {
+      color: #b7a8c5;
+      font-size: 11px;
+    }
+
+    .terminal {
+      padding: 12px;
+      background: #100a19;
+      border: 1px dashed #7545a0;
+      color: #c58bff;
+      font-family: monospace;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding-top: 15px;
+      padding-bottom: 25px;
+      border-top: 1px solid #39254e;
+      color: #c58bff;
+      font-size: 12px;
+    }
+
+    @media (min-width: 600px) {
+      .tile {
+        width: calc(33.333% - 7px);
+        padding: 18px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 56px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <header>
     <div class="wrap">
       <div class="logo">[ NULLZONE ]</div>
-      <div class="tagline">THE UNDERGROUND DIGITAL NETWORK</div>
+      <div class="tagline">
+        THE UNDERGROUND DIGITAL NETWORK
+      </div>
 
       <nav>
         <a href="#explore">Explore</a>
@@ -125,22 +216,121 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="status">[ SYSTEM ONLINE // ACCESS GRANTED ]</div>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="status">
+          [ SYSTEM ONLINE // ACCESS GRANTED ]
+        </div>
 
-      <h1>NO SIGNAL.<br>
-        <span>NO LIMITS.</span>
-      </h1>
+        <h1>
+          NO SIGNAL.<br>
+          <span>NO LIMITS.</span>
+        </h1>
 
-      <p class="intro">
-        Your next sound. Your next game. Your next obsession.
-        Discover music, lyrics, games, apps, videos and more
-        in one underground corner of the internet.
+        <p class="intro">
+          Your next sound. Your next game. Your next obsession.
+          Discover music, lyrics, games, apps, videos and more
+          in one underground corner of the internet.
+        </p>
+
+        <a class="button" href="#explore">
+          [ ENTER NULLZONE ]
+        </a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="explore">
+      <h2>⌘ ENTER THE ZONE</h2>
+      <p class="muted">
+        Choose your destination.
       </p>
 
-      <a class="button" href="#explore">[ ENTER NULLZONE ]</a>
+      <div class="directory">
+
+        <a class="tile" href="#latest">
+          <span>♫</span>
+          <strong>MUSIC</strong>
+          <small>Discover new sounds</small>
+        </a>
+
+        <a class="tile" href="#latest">
+          <span>≋</span>
+          <strong>LYRICS</strong>
+          <small>Words behind the music</small>
+        </a>
+
+        <a class="tile" href="#latest">
+          <span>▣</span>
+          <strong>GAMES</strong>
+          <small>Enter game mode</small>
+        </a>
+
+        <a class="tile" href="#latest">
+          <span>⌘</span>
+          <strong>APPS</strong>
+          <small>Tools and applications</small>
+        </a>
+
+        <a class="tile" href="#latest">
+          <span>▶</span>
+          <strong>VIDEOS</strong>
+          <small>Watch something interesting</small>
+        </a>
+
+        <a class="tile" href="#latest">
+          <span>✳</span>
+          <strong>MORE STUFF</strong>
+          <small>Explore the unknown</small>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section wrap" id="latest">
+      <h2>⌁ LATEST TRANSMISSIONS</h2>
+
+      <p class="muted">
+        New discoveries are coming. Stay connected.
+      </p>
+
+      <div class="terminal">
+        <p>&gt; NULLZONE SYSTEM: ONLINE</p>
+        <p>&gt; ENTERTAINMENT DATABASE: INITIALIZING</p>
+        <p>&gt; YOUR NEXT DISCOVERY AWAITS...</p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="about">
+      <h2>◈ ABOUT NULLZONE</h2>
+
+      <p class="muted">
+        NULLZONE is an underground entertainment hub for
+        music lovers, gamers, app explorers and curious minds.
+        Lightweight, mobile-friendly and built for everyone.
+      </p>
+
+      <p class="muted">
+        No Signal. No Limits. Welcome to the underground.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>NULLZONE</strong>
+      <p class="muted">
+        Music. Games. Apps. Videos. Endless discovery.
+      </p>
+      <p class="muted">
+        Share only content you own or have permission to distribute.
+      </p>
+      <a href="#explore">Explore</a>
+      <a href="#latest">Latest</a>
+      <a href="#about">About</a>
+      <p class="muted">NULLZONE &copy; 2026</p>
     </div>
-  </section>
+  </footer>
+
 </body>
 </html>
